@@ -1,9 +1,9 @@
 // COPYRIGHT (C) 2017 Student Name (UANET ID ) All rights reserved.
 //
-// rational.hpp: Definition of rational class and its interace.
+// rational.h: Definition of rational class and its interace.
 
-#ifndef RATIONAL_HPP
-#define RATIONAL_HPP
+#ifndef RATIONAL_H
+#define RATIONAL_H
 
 #include <cstdlib>
 #include <iosfwd>

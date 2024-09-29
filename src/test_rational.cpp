@@ -6,7 +6,7 @@
 #include <iomanip>
 
 
-#include "rational.hpp"
+#include "rational.h"
 
 void check_result(Rational r1, std::string op, Rational r2){
     std::cout << r1 << " " << op << " " << r2 << " --> ";
