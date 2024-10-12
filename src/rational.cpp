@@ -45,6 +45,65 @@ lcm(int a, int b)
 // Rational implementation
 
 
+//Rational Constructor
+Rational::Rational(int num, int den){
+
+    int divisor = gcd(num, den);    //computes greatest common divisor
+    if (den < 0)
+      numerator = -num / divisor;   //moves negative sign to numerator, if there is one
+    else
+      numerator = num / divisor;
+
+    denominator = abs(den) / divisor;    //makes sure denominator is positive
+
+}
+
+/*
+
+Rational Arithmetic Functions
+
+*/
+
+Rational Rational::add(const Rational& rhsRational){    //multiplies both fractions to have like-denominators and then adds them together. returns new object
+
+  int num = (numerator * rhsRational.denominator) + (rhsRational.numerator * denominator);
+  int den = denominator * rhsRational.denominator;
+
+  return Rational(num, den);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 std::ostream&
 operator<<(std::ostream& os, Rational r)
 {
