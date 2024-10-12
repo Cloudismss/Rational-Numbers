@@ -9,4 +9,5 @@ I've been burning the midnight oil and managed to crank out some code. Feel free
 - **What’s Done So Far**:
   - Defined the **constructors**.
   - Added **private member variables**: `numerator` and `denominator`.
+  - Added **accessor functions**
   - Began working on the **arithmetic functions**, specifically the `add` function.
