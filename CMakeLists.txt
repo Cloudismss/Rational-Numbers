@@ -4,7 +4,7 @@ project(Project-1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 
 # executable
-add_executable(${PROJECT_NAME} "test_rational.cpp")
+add_executable(${PROJECT_NAME} "src/test_rational.cpp")
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "Project-1")
 
 # dirs
