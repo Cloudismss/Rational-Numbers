@@ -1,4 +1,5 @@
-// $NAME <$ID@uakron.edu>
+// Drew Corliss  <dmc191@uakron.edu>
+// Kollin Brown <ksb91@uakron.edu>
 //
 // main.cpp: rational number test suite
 #include <string>
