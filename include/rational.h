@@ -1,4 +1,4 @@
-// COPYRIGHT (C) 2017 Student Name (UANET ID ) All rights reserved.
+// COPYRIGHT (C) 2024 Kollin Brown & Drew Corliss (ksb91/dmc191) All rights reserved.
 //
 // rational.h: Definition of rational class and its interace.
 
