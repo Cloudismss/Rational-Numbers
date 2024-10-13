@@ -39,6 +39,11 @@ public:
 
     // Arithmetic function overloads
     Rational add(const Rational& rhsRational) const;
+    Rational subtract(const Rational& rhsRational) const;
+    Rational multiply(const Rational& rhsRational) const;
+    Rational divide(const Rational& rhsRational) const;
+
+
 
     // Accessors
     // Returns the numerator
@@ -58,6 +63,13 @@ public:
     bool operator>(const Rational &rhs) const;
     bool operator>=(const Rational &rhs) const;
 };
+
+//Non-Member function operator overloads
+Rational operator+(const Rational& lhs, const Rational& rhs);
+Rational operator-(const Rational& lhs, const Rational& rhs);
+Rational operator*(const Rational& lhs, const Rational& rhs);
+Rational operator/(const Rational& lhs, const Rational& rhs);
+
 
 // TODO: Implement support for constant literals in operator overloads
 
