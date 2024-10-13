@@ -48,6 +48,7 @@ public:
 
     // Helper function - reduce to decimal representation
     double decimal() const;
+    Rational reduce(Rational &num);
 
     // Equality Overloads
     bool operator==(const Rational &rhs) const;

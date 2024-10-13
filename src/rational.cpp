@@ -40,6 +40,10 @@ int lcm(int a, int b)
   return (abs(a) / gcd(a, b)) * abs(b);
 }
 
+Rational Rational::reduce(Rational &num)
+{
+
+}
 
 // -------------------------------------------------------------------------- //
 // Rational implementation
