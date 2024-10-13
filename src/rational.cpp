@@ -63,36 +63,36 @@ Rational Arithmetic Functions
 
 */
 
-Rational Rational::add(const Rational& rhsRational)
+Rational Rational::add(const Rational& rhsRational) const
 {    //multiplies both fractions to have like-denominators and then adds them together. returns new object
-  int num = (numerator * rhsRational.getDen) + (rhsRational.getNum * denominator);
-  int den = denominator * rhsRational.getDen;
+  int num = (numerator * rhsRational.getDen()) + (rhsRational.getNum() * denominator);
+  int den = denominator * rhsRational.getDen();
 
   return Rational(num, den);
 }
 
-Rational Rational::subtract(const Rational& rhsRational)
+Rational Rational::subtract(const Rational& rhsRational) const
 {      //multiplies both fractions to have like-denominators and then subtracts them. returns new object
-  int num = (numerator * rhsRational.getDen) - (rhsRational.getNum * denominator);
-  int den = denominator * rhsRational.getDen;
+  int num = (numerator * rhsRational.getDen()) - (rhsRational.getNum() * denominator);
+  int den = denominator * rhsRational.getDen();
 
   return Rational(num, den);
 }
 
-Rational Rational::multiply(const Rational& rhsRational)
+Rational Rational::multiply(const Rational& rhsRational) const
 {     //multiplies numerators and denominators
-  int num = numerator * rhsRational.getNum;
-  int den = denominator * rhsRational.getDen;
+  int num = numerator * rhsRational.getNum();
+  int den = denominator * rhsRational.getDen();
 
-  return Rational(num, dem);
+  return Rational(num, den);
 }
 
-Rational Rational::divide(const Rational& rhsRational)
+Rational Rational::divide(const Rational& rhsRational) const
 {     //multiples first rational number by the reciprocal of the second rational number
-  int num = numerator * rhsRational.getDen;
-  int den = denominator * rhsRational.getNum;
+  int num = numerator * rhsRational.getDen();
+  int den = denominator * rhsRational.getNum();
 
-  return Rational(num, dem);
+  return Rational(num, den);
 }
 
 //Operator Definitions for Arithmetic Overloads
