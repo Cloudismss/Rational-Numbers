@@ -45,6 +45,16 @@ class Rational
       // Returns the denominator
       int getDen() const {return denominator;}
 
+      // Helper function - reduce to decimal representation
+      double decimal() const;
+
+      // Overloads
+      bool operator==(const Rational &rhs) const;
+      bool operator!=(const Rational &rhs) const;
+      bool operator<(const Rational &rhs) const;
+      bool operator<=(const Rational &rhs) const;
+      bool operator>(const Rational &rhs) const;
+      bool operator>=(const Rational &rhs) const;
 };
 
 

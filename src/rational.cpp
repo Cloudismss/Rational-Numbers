@@ -72,6 +72,62 @@ Rational Rational::add(const Rational& rhsRational){    //multiplies both fracti
   return Rational(num, den);
 }
 
+// Helper function
+double Rational::decimal() const
+{
+  return static_cast<float>(this->numerator / this->denominator);
+}
+
+// Equality overload
+bool Rational::operator==(const Rational &rhs) const
+{
+  if (this->decimal() == rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator!=(const Rational &rhs) const
+{
+  if (this->decimal() != rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator<(const Rational &rhs) const
+{
+  if (this->decimal() < rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator<=(const Rational &rhs) const
+{
+  if (this->decimal() <= rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator>(const Rational &rhs) const
+{
+  if (this->decimal() > rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator<(const Rational &rhs) const
+{
+  if (this->decimal() >= rhs.decimal())
+    return true;
+  return false;
+}
+
+bool Rational::operator>=(const Rational &rhs) const
+{
+  if (this->decimal() >= rhs.decimal())
+    return true;
+  return false;
+}
+
 
 
 
@@ -107,7 +163,7 @@ Rational Rational::add(const Rational& rhsRational){    //multiplies both fracti
 std::ostream&
 operator<<(std::ostream& os, Rational r)
 {
-  return os << r.num() << '/' << r.den();
+  return os << r.getNum() << '/' << r.getDen();
 }
 
 //DO NOT CHANGE operators >> overloading function
