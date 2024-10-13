@@ -10,13 +10,10 @@
 #include <iostream>
 #include <stdlib.h>
 
-
 // Mathematical helper functions.
-//
 // NOTE: These are defined in rational.cpp.
 int gcd(int, int);
 int lcm(int, int);
-
 
 // Represents a rational number. The rational numbers are the set of
 // numbers that can be represented as the quotient of two integers.
@@ -32,19 +29,19 @@ class Rational
     int denominator;
 
   public:
-      //Constructors
+      // Constructors
       Rational() : numerator(0), denominator(1);              //default - init to 0
       Rational(int num) : numerator(num), denominator(1);     //whole numbers
       Rational(int num, int den);                             //rational
 
+      // Arithmetic function overloads
       Rational add(const Rational& rhsRational) const;
 
-      // Returns the numerator.
+      // Accessors
+      // Returns the numerator
       int getNum() const {return numerator;}
-
       // Returns the denominator
       int getDen() const {return denominator;}
-
       // Helper function - reduce to decimal representation
       double decimal() const;
 
@@ -74,9 +71,8 @@ class Rational
 //    - r1 / r2
 
 // These are provided for you.
-//
 // NOTE: They are defined in rational.cpp.
-std::ostream& operator<<(std::ostream&, Rational);
-std::istream& operator>>(std::istream&, Rational&);
+std::ostream& operator<<(std::ostream &os, Rational r);
+std::istream& operator>>(std::istream &is, Rational &r);
 
-#endif
+#endif // RATIONAL_H

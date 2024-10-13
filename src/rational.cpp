@@ -11,15 +11,16 @@
 // Helper functions
 
 // Compute the GCD (greatest common divider) of two integer values using Euclid's algorithm.
-int
-gcd(int a, int b)
+int gcd(int a, int b)
 {
-  a = abs(a);   //make them to be positive numbers
+  a = abs(a);   // make them to be positive numbers
   b = abs(b);
-  if(a==0 || b==0){ //if one number is 0, always return 1
+  if(a==0 || b==0)
+  { //if one number is 0, always return 1
     return 1;
   }
-  while (b != 0) {
+  while (b != 0) 
+  {
     int t = b;
     b = a % b;
     a = t;
@@ -27,14 +28,13 @@ gcd(int a, int b)
   return a;
 }
 
-
 // Compute the LCM (Least Common Multiple) of two integer values.
-int
-lcm(int a, int b)
+int lcm(int a, int b)
 {
   a = abs(a); //make them positive
   b = abs(b);
-  if(a == 0 || b == 0){
+  if(a == 0 || b == 0)
+  {
     throw "Integers can not be zero in calculating Least Common Multiple";
   }
   return (abs(a) / gcd(a, b)) * abs(b);
@@ -45,17 +45,16 @@ lcm(int a, int b)
 // Rational implementation
 
 
-//Rational Constructor
-Rational::Rational(int num, int den){
-
-    int divisor = gcd(num, den);    //computes greatest common divisor
+// Rational Constructor
+Rational::Rational(int num, int den)
+{
+    int divisor = gcd(num, den);    // computes greatest common divisor
     if (den < 0)
-      numerator = -num / divisor;   //moves negative sign to numerator, if there is one
+      numerator = -num / divisor;   // moves negative sign to numerator, if there is one
     else
       numerator = num / divisor;
 
-    denominator = abs(den) / divisor;    //makes sure denominator is positive
-
+    denominator = abs(den) / divisor;    // makes sure denominator is positive
 }
 
 /*
@@ -64,8 +63,8 @@ Rational Arithmetic Functions
 
 */
 
-Rational Rational::add(const Rational& rhsRational){    //multiplies both fractions to have like-denominators and then adds them together. returns new object
-
+Rational Rational::add(const Rational& rhsRational)
+{    //multiplies both fractions to have like-denominators and then adds them together. returns new object
   int num = (numerator * rhsRational.denominator) + (rhsRational.numerator * denominator);
   int den = denominator * rhsRational.denominator;
 
@@ -128,47 +127,13 @@ bool Rational::operator>=(const Rational &rhs) const
   return false;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-std::ostream&
-operator<<(std::ostream& os, Rational r)
+std::ostream& operator<<(std::ostream& os, Rational r)
 {
   return os << r.getNum() << '/' << r.getDen();
 }
 
-//DO NOT CHANGE operators >> overloading function
-std::istream&
-operator>>(std::istream& is, Rational& r)
+// DO NOT CHANGE operators >> overloading function
+std::istream& operator>>(std::istream& is, Rational& r)
 {
   // Read the first integer, return on error.
   int p;
@@ -177,7 +142,8 @@ operator>>(std::istream& is, Rational& r)
     return is;
 
   // Check for the divider. Assuming no spaces.
-  if (is.peek() != '/') {
+  if (is.peek() != '/') 
+  {
     r = Rational(p);
     return is;
   }
@@ -187,7 +153,8 @@ operator>>(std::istream& is, Rational& r)
   is >> q;
   if (!is)
     return is;
-  if (q == 0) {
+  if (q == 0) 
+  {
     is.setstate(std::ios::failbit);
     return is;
   }
@@ -200,20 +167,13 @@ operator>>(std::istream& is, Rational& r)
   if (!is)
     return is;
   // Require that the divider to be a '/'.
-  if (c != '/') {
+  if (c != '/') 
+  {
     is.setstate(std::ios::failbit);
     return is;
   }
-
   // Make sure that we didn't read p/0.
-
   r = Rational(p, q);
   return is;
 #endif
 }
-
-
-
-
-
-
