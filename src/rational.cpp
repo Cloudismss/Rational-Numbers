@@ -1,15 +1,12 @@
 // COPYRIGHT (C) 2024 Kollin Brown & Drew Corliss (ksb91/dmc191) All rights reserved.
-//
 // rational.h: Definition of rational class and its interace.
 
 #include "rational.h"
 
 #include <iostream>
 
-
 // -------------------------------------------------------------------------- //
 // Helper functions
-
 // Compute the GCD (greatest common divider) of two integer values using Euclid's algorithm.
 int gcd(int a, int b)
 {
@@ -42,7 +39,6 @@ int lcm(int a, int b)
 // -------------------------------------------------------------------------- //
 
 // -------------------------------------------------------------------------- //
-// Rational implementation:
 // Rational Constructor
 Rational::Rational(int num, int den)
 {
@@ -54,6 +50,7 @@ Rational::Rational(int num, int den)
 
     denominator = abs(den) / divisor;    // makes sure denominator is positive
 }
+// -------------------------------------------------------------------------- //
 
 // -------------------------------------------------------------------------- //
 // Rational Arithmetic Functions
@@ -170,7 +167,10 @@ bool Rational::operator>=(const Rational &rhs) const
 // Ostream overload
 std::ostream& operator<<(std::ostream& os, Rational r)
 {
-  return os << r.getNum() << '/' << r.getDen();
+  if (r.getDen() != 1)
+    return os << r.getNum() << '/' << r.getDen();
+  else
+    return os << r.getNum();
 }
 
 // DO NOT CHANGE operators >> overloading function

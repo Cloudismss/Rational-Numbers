@@ -43,8 +43,6 @@ public:
     Rational multiply(const Rational& rhsRational) const;
     Rational divide(const Rational& rhsRational) const;
 
-
-
     // Accessors
     // Returns the numerator
     int getNum() const {return numerator;}
@@ -65,12 +63,11 @@ public:
     bool operator>=(const Rational &rhs) const;
 };
 
-//Non-Member function operator overloads
+// Non-Member function operator overloads
 Rational operator+(const Rational& lhs, const Rational& rhs);
 Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
-
 
 // TODO: Implement support for constant literals in operator overloads
 
