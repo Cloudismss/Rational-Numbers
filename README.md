@@ -11,3 +11,21 @@ I've been burning the midnight oil and managed to crank out some code. Feel free
   - Added **private member variables**: `numerator` and `denominator`.
   - Added **accessor functions**
   - Began working on the **arithmetic functions**, specifically the `add` function.
+
+--------------------------------------------------------------------------------------------------------------------
+
+Update for Kollin,
+
+### Updates:
+- **Completed**:
+  - Defined the **equality overloads**.
+  - Defined the **ordering overloads**.
+  - Added **decimal** function to compare rationals.
+  - Adjusted provided overloads to accept `getNum()` and `getDen()`.
+  - Adjusted styling for consistency
+
+ ### TODO:
+ - **Tryhard section**:
+   - Provide **overloads** to accept **constant literals**
+   - Create a `reduce` function to reduce the fraction
+   - Modify `<<` overload to print prettier rational representations if denominator is 1
