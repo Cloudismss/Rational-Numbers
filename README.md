@@ -12,7 +12,7 @@ I've been burning the midnight oil and managed to crank out some code. Feel free
   - Added **accessor functions**
   - Began working on the **arithmetic functions**, specifically the `add` function.
 
---------------------------------------------------------------------------------------------------------------------
+## 
 
 Update for Kollin,
 
