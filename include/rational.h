@@ -56,11 +56,17 @@ public:
     // Equality Overloads
     bool operator==(const Rational &rhs) const;
     bool operator!=(const Rational &rhs) const;
+    bool operator==(const int &&rhs) const;
+    bool operator!=(const int &&rhs) const;
     // Comparison Overloads
     bool operator<(const Rational &rhs) const;
     bool operator<=(const Rational &rhs) const;
     bool operator>(const Rational &rhs) const;
     bool operator>=(const Rational &rhs) const;
+    bool operator<(const int &&rhs) const;
+    bool operator<=(const int &&rhs) const;
+    bool operator>(const int &&rhs) const;
+    bool operator>=(const int &&rhs) const;
 };
 
 // Non-Member function operator overloads
