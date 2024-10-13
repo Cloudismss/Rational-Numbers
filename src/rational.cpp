@@ -71,12 +71,13 @@ Rational Rational::add(const Rational& rhsRational)
   return Rational(num, den);
 }
 
-// Helper function
+// Helper function to reduce rational to decimal
 double Rational::decimal() const
 {
   return static_cast<float>(this->numerator / this->denominator);
 }
 
+// -------------------------------------------------------------------------- //
 // Equality overload
 bool Rational::operator==(const Rational &rhs) const
 {
@@ -85,13 +86,18 @@ bool Rational::operator==(const Rational &rhs) const
   return false;
 }
 
+// Inequality overload
 bool Rational::operator!=(const Rational &rhs) const
 {
   if (this->decimal() != rhs.decimal())
     return true;
   return false;
 }
+// -------------------------------------------------------------------------- //
 
+// -------------------------------------------------------------------------- //
+// Comparison overloads
+// Less than overload
 bool Rational::operator<(const Rational &rhs) const
 {
   if (this->decimal() < rhs.decimal())
@@ -99,6 +105,7 @@ bool Rational::operator<(const Rational &rhs) const
   return false;
 }
 
+// Less than or equal to overload
 bool Rational::operator<=(const Rational &rhs) const
 {
   if (this->decimal() <= rhs.decimal())
@@ -106,6 +113,7 @@ bool Rational::operator<=(const Rational &rhs) const
   return false;
 }
 
+// Greater than overload
 bool Rational::operator>(const Rational &rhs) const
 {
   if (this->decimal() > rhs.decimal())
@@ -113,20 +121,16 @@ bool Rational::operator>(const Rational &rhs) const
   return false;
 }
 
-bool Rational::operator<(const Rational &rhs) const
-{
-  if (this->decimal() >= rhs.decimal())
-    return true;
-  return false;
-}
-
+// Greater than or equal to overload
 bool Rational::operator>=(const Rational &rhs) const
 {
   if (this->decimal() >= rhs.decimal())
     return true;
   return false;
 }
+// -------------------------------------------------------------------------- //
 
+// Ostream overload
 std::ostream& operator<<(std::ostream& os, Rational r)
 {
   return os << r.getNum() << '/' << r.getDen();
