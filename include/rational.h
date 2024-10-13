@@ -25,7 +25,7 @@ class Rational
   // 3. A constructor that takes a pair of values - [Done]
   // 4. Overloads of equality operators - [Done]
   // 5. Overloads of comparison operators - [Done]
-  // 6. Overloads of arithmetic operators
+  // 6. Overloads of arithmetic operators - [Done]
 
 private:
     int numerator;
@@ -33,12 +33,17 @@ private:
 
 public:
     // Constructors
-    Rational() : numerator(0), denominator(1);              // default - init to 0
-    Rational(int num) : numerator(num), denominator(1);     // whole numbers
+    Rational() : numerator(0), denominator(1) {}              // default - init to 0
+    Rational(int num) : numerator(num), denominator(1) {}     // whole numbers
     Rational(int num, int den);                             // rational
 
     // Arithmetic function overloads
     Rational add(const Rational& rhsRational) const;
+    Rational subtract(const Rational& rhsRational) const;
+    Rational multiply(const Rational& rhsRational) const;
+    Rational divide(const Rational& rhsRational) const;
+
+
 
     // Accessors
     // Returns the numerator
@@ -59,6 +64,13 @@ public:
     bool operator>(const Rational &rhs) const;
     bool operator>=(const Rational &rhs) const;
 };
+
+//Non-Member function operator overloads
+Rational operator+(const Rational& lhs, const Rational& rhs);
+Rational operator-(const Rational& lhs, const Rational& rhs);
+Rational operator*(const Rational& lhs, const Rational& rhs);
+Rational operator/(const Rational& lhs, const Rational& rhs);
+
 
 // TODO: Implement support for constant literals in operator overloads
 
