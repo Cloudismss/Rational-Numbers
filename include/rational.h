@@ -23,42 +23,43 @@ class Rational
   // 1. A default constructor - [Done]
   // 2. A constructor that takes an integer value - [Done]
   // 3. A constructor that takes a pair of values - [Done]
+  // 4. Overloads of equality operators - [Done]
+  // 5. Overloads of comparison operators - [Done]
+  // 6. Overloads of arithmetic operators
 
-  private:
+private:
     int numerator;
     int denominator;
 
-  public:
-      // Constructors
-      Rational() : numerator(0), denominator(1);              //default - init to 0
-      Rational(int num) : numerator(num), denominator(1);     //whole numbers
-      Rational(int num, int den);                             //rational
+public:
+    // Constructors
+    Rational() : numerator(0), denominator(1);              // default - init to 0
+    Rational(int num) : numerator(num), denominator(1);     // whole numbers
+    Rational(int num, int den);                             // rational
 
-      // Arithmetic function overloads
-      Rational add(const Rational& rhsRational) const;
+    // Arithmetic function overloads
+    Rational add(const Rational& rhsRational) const;
 
-      // Accessors
-      // Returns the numerator
-      int getNum() const {return numerator;}
-      // Returns the denominator
-      int getDen() const {return denominator;}
+    // Accessors
+    // Returns the numerator
+    int getNum() const {return numerator;}
+    // Returns the denominator
+    int getDen() const {return denominator;}
+
+    // Helper function - reduce to decimal representation
+    double decimal() const;
+
+    // Equality Overloads
+    bool operator==(const Rational &rhs) const;
+    bool operator!=(const Rational &rhs) const;
+    // Comparison Overloads
+    bool operator<(const Rational &rhs) const;
+    bool operator<=(const Rational &rhs) const;
+    bool operator>(const Rational &rhs) const;
+    bool operator>=(const Rational &rhs) const;
 };
 
-
-// TODO: Implement support for
-// 1. Comparing two rational numbers for equality:
-//    - r1 == t2
-//    - r1 != r2
-// 2. Ordering rational numbers
-//    - r1 < r2
-//    - r1 > r2
-//    - r1 <= r2
-//    - r1 >= r2
-// 3. The standard arithmetic operators
-//    - r1 + r2
-//    - r1 - r2
-//    - r1 * r2
-//    - r1 / r2
+// TODO: Implement support for constant literals in operator overloads
 
 // These are provided for you.
 // NOTE: They are defined in rational.cpp.
