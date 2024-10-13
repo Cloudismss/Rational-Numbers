@@ -39,16 +39,10 @@ int lcm(int a, int b)
   }
   return (abs(a) / gcd(a, b)) * abs(b);
 }
-
-Rational Rational::reduce(Rational &num)
-{
-
-}
+// -------------------------------------------------------------------------- //
 
 // -------------------------------------------------------------------------- //
-// Rational implementation
-
-
+// Rational implementation:
 // Rational Constructor
 Rational::Rational(int num, int den)
 {
@@ -61,12 +55,8 @@ Rational::Rational(int num, int den)
     denominator = abs(den) / divisor;    // makes sure denominator is positive
 }
 
-/*
-
-Rational Arithmetic Functions
-
-*/
-
+// -------------------------------------------------------------------------- //
+// Rational Arithmetic Functions
 Rational Rational::add(const Rational& rhsRational) const
 {    //multiplies both fractions to have like-denominators and then adds them together. returns new object
   int num = (numerator * rhsRational.getDen()) + (rhsRational.getNum() * denominator);
@@ -98,9 +88,10 @@ Rational Rational::divide(const Rational& rhsRational) const
 
   return Rational(num, den);
 }
+// -------------------------------------------------------------------------- //
 
-//Operator Definitions for Arithmetic Overloads
-
+// -------------------------------------------------------------------------- //
+// Operator Definitions for Arithmetic Overloads
 Rational operator+(const Rational& lhs, const Rational& rhs)
 {
   return lhs.add(rhs);
@@ -120,25 +111,23 @@ Rational operator/(const Rational& lhs, const Rational& rhs)
 {
   return lhs.divide(rhs);
 }
-
+// -------------------------------------------------------------------------- //
 
 
 // Helper function to reduce rational to decimal
 double Rational::decimal() const
 {
-  return static_cast<float>(this->numerator / this->denominator);
+  return static_cast<double>(this->numerator) / static_cast<double>(this->denominator);
 }
 
 // -------------------------------------------------------------------------- //
-// Equality overload
+// Equality overloads
 bool Rational::operator==(const Rational &rhs) const
 {
   if (this->decimal() == rhs.decimal())
     return true;
   return false;
 }
-
-// Inequality overload
 bool Rational::operator!=(const Rational &rhs) const
 {
   if (this->decimal() != rhs.decimal())
@@ -149,7 +138,6 @@ bool Rational::operator!=(const Rational &rhs) const
 
 // -------------------------------------------------------------------------- //
 // Comparison overloads
-// Less than overload
 bool Rational::operator<(const Rational &rhs) const
 {
   if (this->decimal() < rhs.decimal())
@@ -157,7 +145,6 @@ bool Rational::operator<(const Rational &rhs) const
   return false;
 }
 
-// Less than or equal to overload
 bool Rational::operator<=(const Rational &rhs) const
 {
   if (this->decimal() <= rhs.decimal())
@@ -165,7 +152,6 @@ bool Rational::operator<=(const Rational &rhs) const
   return false;
 }
 
-// Greater than overload
 bool Rational::operator>(const Rational &rhs) const
 {
   if (this->decimal() > rhs.decimal())
@@ -173,7 +159,6 @@ bool Rational::operator>(const Rational &rhs) const
   return false;
 }
 
-// Greater than or equal to overload
 bool Rational::operator>=(const Rational &rhs) const
 {
   if (this->decimal() >= rhs.decimal())
