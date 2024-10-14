@@ -125,12 +125,9 @@ bool Rational::operator==(const Rational &rhs) const
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator==(const int lhs, const Rational& rhs) {
     return Rational(lhs) == rhs;
 }
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 
 bool Rational::operator!=(const Rational &rhs) const
 {
@@ -138,12 +135,9 @@ bool Rational::operator!=(const Rational &rhs) const
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator!=(const int lhs, const Rational& rhs) {
     return Rational(lhs) != rhs;
 }
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 // -------------------------------------------------------------------------- //
 
 // -------------------------------------------------------------------------- //
@@ -154,13 +148,10 @@ bool Rational::operator<(const Rational &rhs) const
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator<(const int lhs, const Rational &rhs) {
     Rational r(lhs);  // Convert int to Rational
     return r < rhs;   // Use the Rational's comparison
 }
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 
 bool Rational::operator<=(const Rational &rhs) const
 {
@@ -168,27 +159,21 @@ bool Rational::operator<=(const Rational &rhs) const
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator<=(const int lhs, const Rational &rhs) {
     Rational r(lhs);  // Convert int to Rational
     return r <= rhs;  // Use the Rational's comparison
 }
 
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 bool Rational::operator>(const Rational &rhs) const
 {
   if (this->decimal() > rhs.decimal())
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator>(const int lhs, const Rational &rhs) {
     Rational r(lhs);  // Convert int to Rational
     return r > rhs;   // Use the Rational's comparison
 }
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 
 bool Rational::operator>=(const Rational &rhs) const
 {
@@ -196,13 +181,10 @@ bool Rational::operator>=(const Rational &rhs) const
     return true;
   return false;
 }
-<<<<<<< HEAD
 bool operator>=(const int lhs, const Rational &rhs) {
     Rational r(lhs);  // Convert int to Rational
     return r >= rhs;  // Use the Rational's comparison
 }
-=======
->>>>>>> 8e11a1e757d2937a2bb7c565ae002dbb33b1f3da
 // -------------------------------------------------------------------------- //
 
 // Ostream overload
