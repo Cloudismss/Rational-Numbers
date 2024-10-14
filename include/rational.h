@@ -51,13 +51,10 @@ public:
 
     // Helper function - reduce to decimal representation
     double decimal() const;
-    Rational reduce(Rational &num);
 
     // Equality Overloads
     bool operator==(const Rational &rhs) const;
     bool operator!=(const Rational &rhs) const;
-    //bool operator==(const int rhs) const;
-    bool operator!=(const int rhs) const;
     // Comparison Overloads
     bool operator<(const Rational &rhs) const;
     bool operator<=(const Rational &rhs) const;
@@ -71,17 +68,13 @@ Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
 
-//Non-Member functions for handling left side integers
+// Non-Member functions for handling left side integers
 bool operator==(const int lhs, const Rational& rhs);
 bool operator!=(const int lhs, const Rational& rhs);
 bool operator<(const int lhs, const Rational &rhs);
 bool operator<=(const int lhs, const Rational &rhs);
 bool operator>(const int lhs, const Rational &rhs);
 bool operator>=(const int lhs, const Rational &rhs);
-
-
-
-// TODO: Implement support for constant literals in operator overloads
 
 // These are provided for you.
 // NOTE: They are defined in rational.cpp.
