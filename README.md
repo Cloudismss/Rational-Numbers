@@ -26,7 +26,7 @@ Update for Kollin,
 
 ## Progress Update - 10/13 - 9PM
 
- ### TODO:
+ ### Finished:
  - **Tryhard section**:
    - Provided **overloads** to accept **constant literals**
    - Modify `<<` overload to print prettier rational representations if denominator is 1
