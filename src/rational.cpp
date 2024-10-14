@@ -125,11 +125,8 @@ bool Rational::operator==(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator==(const int &&rhs) const
-{
-  if (this->decimal() == rhs)
-    return true;
-  return false;
+bool operator==(const int lhs, const Rational& rhs) {
+    return Rational(lhs) == rhs;
 }
 
 bool Rational::operator!=(const Rational &rhs) const
@@ -138,11 +135,8 @@ bool Rational::operator!=(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator!=(const int &&rhs) const
-{
-  if (this->decimal() != rhs)
-    return true;
-  return false;
+bool operator!=(const int lhs, const Rational& rhs) {
+    return Rational(lhs) != rhs;
 }
 // -------------------------------------------------------------------------- //
 
@@ -154,11 +148,9 @@ bool Rational::operator<(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator<(const int &&rhs) const
-{
-  if (this->decimal() < rhs)
-    return true;
-  return false;
+bool operator<(const int lhs, const Rational &rhs) {
+    Rational r(lhs);  // Convert int to Rational
+    return r < rhs;   // Use the Rational's comparison
 }
 
 bool Rational::operator<=(const Rational &rhs) const
@@ -167,11 +159,9 @@ bool Rational::operator<=(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator<=(const int &&rhs) const
-{
-  if (this->decimal() <= rhs)
-    return true;
-  return false;
+bool operator<=(const int lhs, const Rational &rhs) {
+    Rational r(lhs);  // Convert int to Rational
+    return r <= rhs;  // Use the Rational's comparison
 }
 
 bool Rational::operator>(const Rational &rhs) const
@@ -180,11 +170,9 @@ bool Rational::operator>(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator>(const int &&rhs) const
-{
-  if (this->decimal() > rhs)
-    return true;
-  return false;
+bool operator>(const int lhs, const Rational &rhs) {
+    Rational r(lhs);  // Convert int to Rational
+    return r > rhs;   // Use the Rational's comparison
 }
 
 bool Rational::operator>=(const Rational &rhs) const
@@ -193,11 +181,9 @@ bool Rational::operator>=(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator>=(const int &&rhs) const
-{
-  if (this->decimal() >= rhs)
-    return true;
-  return false;
+bool operator>=(const int lhs, const Rational &rhs) {
+    Rational r(lhs);  // Convert int to Rational
+    return r >= rhs;  // Use the Rational's comparison
 }
 // -------------------------------------------------------------------------- //
 

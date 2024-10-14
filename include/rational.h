@@ -56,17 +56,13 @@ public:
     // Equality Overloads
     bool operator==(const Rational &rhs) const;
     bool operator!=(const Rational &rhs) const;
-    bool operator==(const int &&rhs) const;
-    bool operator!=(const int &&rhs) const;
+    //bool operator==(const int rhs) const;
+    bool operator!=(const int rhs) const;
     // Comparison Overloads
     bool operator<(const Rational &rhs) const;
     bool operator<=(const Rational &rhs) const;
     bool operator>(const Rational &rhs) const;
     bool operator>=(const Rational &rhs) const;
-    bool operator<(const int &&rhs) const;
-    bool operator<=(const int &&rhs) const;
-    bool operator>(const int &&rhs) const;
-    bool operator>=(const int &&rhs) const;
 };
 
 // Non-Member function operator overloads
@@ -74,6 +70,16 @@ Rational operator+(const Rational& lhs, const Rational& rhs);
 Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
+
+//Non-Member functions for handling left side integers
+bool operator==(const int lhs, const Rational& rhs);
+bool operator!=(const int lhs, const Rational& rhs);
+bool operator<(const int lhs, const Rational &rhs);
+bool operator<=(const int lhs, const Rational &rhs);
+bool operator>(const int lhs, const Rational &rhs);
+bool operator>=(const int lhs, const Rational &rhs);
+
+
 
 // TODO: Implement support for constant literals in operator overloads
 

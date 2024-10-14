@@ -113,6 +113,14 @@ main()
   cout << "Standard tests: "<< endl;
   Test_rational test;
   test.run();
+
+  Rational r1 = 1;
+cout << (r1 == 1) << endl; // prints true
+cout << (2 == r1) << endl; // prints false
+cout << (r1 < 2) << endl; // prints true
+cout << (0 < r1) << endl; // prints false
+cout << (r1 + 2) << endl; // prints 3/1 (or just 3
+
   cout << "Now test your input:" << endl;
   // Determine if input is coming from a terminal.
 
