@@ -125,22 +125,10 @@ bool Rational::operator==(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator==(const int &&rhs) const
-{
-  if (this->decimal() == rhs)
-    return true;
-  return false;
-}
 
 bool Rational::operator!=(const Rational &rhs) const
 {
   if (this->decimal() != rhs.decimal())
-    return true;
-  return false;
-}
-bool Rational::operator!=(const int &&rhs) const
-{
-  if (this->decimal() != rhs)
     return true;
   return false;
 }
@@ -154,12 +142,6 @@ bool Rational::operator<(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator<(const int &&rhs) const
-{
-  if (this->decimal() < rhs)
-    return true;
-  return false;
-}
 
 bool Rational::operator<=(const Rational &rhs) const
 {
@@ -167,22 +149,9 @@ bool Rational::operator<=(const Rational &rhs) const
     return true;
   return false;
 }
-bool Rational::operator<=(const int &&rhs) const
-{
-  if (this->decimal() <= rhs)
-    return true;
-  return false;
-}
-
 bool Rational::operator>(const Rational &rhs) const
 {
   if (this->decimal() > rhs.decimal())
-    return true;
-  return false;
-}
-bool Rational::operator>(const int &&rhs) const
-{
-  if (this->decimal() > rhs)
     return true;
   return false;
 }
@@ -190,12 +159,6 @@ bool Rational::operator>(const int &&rhs) const
 bool Rational::operator>=(const Rational &rhs) const
 {
   if (this->decimal() >= rhs.decimal())
-    return true;
-  return false;
-}
-bool Rational::operator>=(const int &&rhs) const
-{
-  if (this->decimal() >= rhs)
     return true;
   return false;
 }
