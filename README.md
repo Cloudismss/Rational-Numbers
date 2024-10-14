@@ -24,8 +24,9 @@ Update for Kollin,
   - Adjusted provided overloads to accept `getNum()` and `getDen()`.
   - Adjusted styling for consistency
 
+## Progress Update - 10/13 - 9PM
+
  ### TODO:
  - **Tryhard section**:
-   - Provide **overloads** to accept **constant literals**
-   - Create a `reduce` function to reduce the fraction
+   - Provided **overloads** to accept **constant literals**
    - Modify `<<` overload to print prettier rational representations if denominator is 1
